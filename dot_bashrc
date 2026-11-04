@@ -1,0 +1,25 @@
+export MANPATH=/Users/chimmus/.local/share/man:$MANPATH
+export PATH=/Users/chimmus/.local/bin:$PATH
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+eval "$(starship init bash)"
+eval "$(fzf --bash)"
+
+alias la="ls -a"
+alias repo="cd ~/repos"
+alias otto="cd ~/sandbox/o ; ollama launch claude --model gemma4:31b-cloud"
+alias ll="ls -l"
+alias lla="ls -la"
+alias lal="ls -la"
+alias fcat='fzf --preview "cat {}"'
+alias v="nvim"
+alias s="spf"
+
+alias python="python3"
+alias pip="pip3"
+
+alias mr="mooce -t r -l"
+
+eval "$(~/.local/bin/mise activate bash)"
