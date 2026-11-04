@@ -1,8 +1,8 @@
-eval "$(~/.local/bin/mise activate bash)"
 
-export MANPATH=/Users/chimmus/.local/share/man:$MANPATH
-export PATH=/Users/chimmus/.local/bin:$PATH
+export MANPATH=$HOME/.local/share/man:$MANPATH
+export PATH=$HOME/.local/bin:$PATH
 
+if command -v mise >/dev/null 2>&1; then eval "$(mise activate bash)"; fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
@@ -26,4 +26,4 @@ alias mr="mooce -t r -l"
 
 export DOCKER_PATH=podman
 
-eval "$(~/.local/bin/mise activate bash)"
+if command -v mise >/dev/null 2>&1; then eval "$(mise activate bash)"; fi
