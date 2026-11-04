@@ -1,0 +1,30 @@
+export MANPATH=/Users/chimmus/.local/share/man:$MANPATH
+export PATH=/Users/chimmus/.local/bin:$PATH
+
+# Setting NeoVim as the default editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Starship
+eval "$(starship init zsh)"
+eval "$(fzf --zsh)"
+
+alias la="ls -a"
+alias repo="cd ~/repos"
+alias otto="cd ~/sandbox/o ; ollama launch claude --model gemma4:31b-cloud"
+alias ll="ls -l"
+alias lla="ls -a -l"
+alias lal="ls -a -l"
+alias fcat="fzf --preview "cat {}""
+alias v="nvim"
+alias s="spf"
+
+# Python alias
+alias python="python3"
+alias pip="pip3"
+
+# Aliases for programs I made myself
+alias mr="mooce -t r -l"
+
+eval "$(~/.local/bin/mise activate zsh)"
+

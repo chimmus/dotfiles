@@ -1,0 +1,57 @@
+add_newline = false
+format = "$username$hostname $directory$character"
+# format = "$directory$character"
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "fg:#749DEB bold"
+
+[hostname]
+ssh_only = false
+format = "[@$hostname]($style)"
+style = "fg:#749DEB bold"
+
+[directory]
+truncation_length = 1
+truncation_symbol = ""
+home_symbol = "~"
+format = "[$path]($style)[$read_only]($read_only_style)"
+style = "fg:#3F4863 bold"
+
+[character]
+success_symbol = " [❯](fg:#749DEB bold)"
+error_symbol = " [❯](fg:#FF5C5C bold)"
+
+[directory.substitutions]
+"Users/chimmus" = "~"
+"home/chimmus" = "~"
+"~/Documents" = "󰈙"
+"~/Downloads" = ""
+"~/Music" = ""
+"~/Pictures" = ""
+"~/documents" = "󰈙"
+"~/downloads" = ""
+"~/music" = ""
+"~/pictures" = ""
+"~/DOCUMENTS" = "󰈙"
+"~/DOWNLOADS" = ""
+"~/MUSIC" = ""
+"~/PICTURES" = ""
+"screenshots" = ""
+"SCREENSHOTS" = ""
+"Screenshots" = ""
+"ScreenShots" = ""
+"rust" = ""
+"Rust" = ""
+"RUST" = ""
+"shell" = "󰆍"
+"SHELL" = "󰆍"
+"Shell" = "󰆍"
+"sh" = "󰆍"
+"SH" = "󰆍"
+"Sh" = "󰆍"
+ # :%s/^./
+
+[cmd_duration]
+disabled = true
