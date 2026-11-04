@@ -1,3 +1,5 @@
+eval "$(~/.local/bin/mise activate bash)"
+
 export MANPATH=/Users/chimmus/.local/share/man:$MANPATH
 export PATH=/Users/chimmus/.local/bin:$PATH
 
