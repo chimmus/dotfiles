@@ -24,4 +24,6 @@ alias pip="pip3"
 
 alias mr="mooce -t r -l"
 
+export DOCKER_PATH=podman
+
 eval "$(~/.local/bin/mise activate bash)"
