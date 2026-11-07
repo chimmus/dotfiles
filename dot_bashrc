@@ -27,6 +27,6 @@ alias mr="mooce -t r -l"
 
 export DOCKER_PATH=podman
 
-alias devconup='devcontainer up --docker-path podman --workspace-folder && unset GH_TOKEN'
+alias devconup='GH_TOKEN=$(gh auth token) devcontainer up --docker-path podman --workspace-folder'
 
 if command -v mise >/dev/null 2>&1; then eval "$(mise activate bash)"; fi
