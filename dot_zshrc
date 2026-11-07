@@ -30,7 +30,7 @@ alias pip="pip3"
 alias mr="mooce -t r -l"
 
 export DOCKER_PATH=podman
-alias devconup="devcontainer up --docker-path podman --remote-env GH_TOKEN=$(gh auth token) --workspace-folder"
+alias devconup='devcontainer up --docker-path podman --remote-env GH_TOKEN=$(gh auth token) --workspace-folder'
 
 if command -v mise >/dev/null 2>&1; then eval "$(mise activate zsh)"; fi
 
