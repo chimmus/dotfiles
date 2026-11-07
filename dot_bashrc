@@ -18,6 +18,7 @@ alias lal="ls -la"
 alias fcat='fzf --preview "cat {}"'
 alias v="nvim"
 alias s="spf"
+alias podmane="podman exec -it -u vscode"
 
 alias python="python3"
 alias pip="pip3"
@@ -25,5 +26,7 @@ alias pip="pip3"
 alias mr="mooce -t r -l"
 
 export DOCKER_PATH=podman
+
+alias devconup="devcontainer up --docker-path podman --remote-env GH_TOKEN=$(gh auth token) --workspace-folder"
 
 if command -v mise >/dev/null 2>&1; then eval "$(mise activate bash)"; fi
