@@ -1,4 +1,4 @@
-
+clipboard-read = ask
 keybind = cmd+,=unbind
 keybind = cmd+comma=text:\x15ghostty +edit-config\r
 
