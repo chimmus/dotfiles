@@ -33,5 +33,4 @@ export DOCKER_PATH=podman
 alias devconup='GH_TOKEN=$(gh auth token) devcontainer up --docker-path podman --workspace-folder'
 
 if command -v mise >/dev/null 2>&1; then eval "$(mise activate zsh)"; fi
-unset GH_TOKEN
 
