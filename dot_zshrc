@@ -21,6 +21,7 @@ alias fcat="fzf --preview "cat {}""
 alias v="nvim"
 alias s="spf"
 alias podmane="podman exec -it -u vscode"
+alias artcat='arttime --nolearn -a kissingcats -b kissingcats2 -t "Sometimes it’s the people no one imagines anything of who do the things that no one can imagine" --ac 8'
 
 # Python alias
 alias python="python3"
