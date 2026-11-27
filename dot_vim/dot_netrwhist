@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/chimmus/.vim'
+let g:netrw_dirhist_3='/Users/chimmus/Sandbox/zk/src'
+let g:netrw_dirhist_2='/Users/chimmus/Sandbox/zk'
+let g:netrw_dirhist_1='/Users/chimmus/Sandbox/zk/target'
+let g:netrw_dirhist_0='/Users/chimmus/Sandbox/zk'
+let g:netrw_dirhist_9='/Users/chimmus/.vim'
+let g:netrw_dirhist_8='/Users/chimmus'
+let g:netrw_dirhist_7='/Users/chimmus/.vim'
+let g:netrw_dirhist_6='/Users/chimmus/Sandbox/house'
+let g:netrw_dirhist_5='/Users/chimmus/.vim'
