@@ -6,9 +6,10 @@ set mouse=a
 if has('macunix')
       set clipboard=unnamed
 endif
-
+echom 'keybinds.vim loaded'
 " Yank to the host clipboard via OSC 52 when running inside a container
 if filereadable('/run/.containerenv') || filereadable('/.dockerenv')
+  echom 'osc52 block entered'
   function! s:osc52_yank() abort
     let l:text = join(v:event.regcontents, "\n")
     if v:event.regtype ==# 'V'
