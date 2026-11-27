@@ -8,11 +8,19 @@ if has('macunix')
 endif
 
 if filereadable('/etc/os-release') && match(readfile('/etc/os-release'), 'ID=ubuntu') != -1
+  function! s:WrapOsc52(seq)
+    if !empty($TMUX)
+      " Escape ESC as ESC ESC and wrap in tmux DCS passthrough
+      return "\ePtmux;\e" . substitute(a:seq, "\e", "\e\e", 'g') . "\e\\"
+    endif
+    return a:seq
+  endfunction
+
   " --- Yank to macOS clipboard via OSC 52 ---
   function! Osc52Yank()
-    let buffer = system('base64 | tr -d "\n"', @0)
-    let buffer = "\e]52;c;" . buffer . "\x07"
-    silent exe "!echo -ne " . shellescape(buffer) . " > /dev/tty"
+    let b64 = system('base64 | tr -d "\n"', @0)
+    let seq = s:WrapOsc52("\e]52;c;" . b64 . "\x07")
+    silent exe "!printf " . shellescape(seq) . " > /dev/tty"
     redraw!
   endfunction
 
@@ -24,10 +32,9 @@ if filereadable('/etc/os-release') && match(readfile('/etc/os-release'), 'ID=ubu
   " --- Paste from macOS clipboard via OSC 52 ---
   function! Osc52Paste()
     let tty = '/dev/tty'
-    " Save terminal settings, switch to raw mode without echo to read response
     let saved_stty = system('stty -g < ' . tty)
     call system('stty raw -echo min 0 time 5 < ' . tty)
-    call writefile(["\e]52;c;?\x07"], tty, 'b')
+    call writefile([s:WrapOsc52("\e]52;c;?\x07")], tty, 'b')
 
     let resp = ''
     while 1
